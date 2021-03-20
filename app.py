@@ -23,7 +23,7 @@ from bots import DialogAndWelcomeBot
 
 # Create the loop and Flask app
 from config import DefaultConfig
-from dialogs import MainDialog, CustomMainDialog
+from dialogs import CustomMainDialog
 
 CONFIG = DefaultConfig()
 
