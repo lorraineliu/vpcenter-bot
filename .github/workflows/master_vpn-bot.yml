@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Python app to Azure Web App - vpcenter-bot
+name: Build and deploy Python app to Azure Web App - vpn-bot
 
 on:
   push:
@@ -30,6 +30,6 @@ jobs:
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'vpcenter-bot'
+        app-name: 'vpn-bot'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_ab545af74eba4d3c91f7b83bd23fc637 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_ccc91a4857cf4ac789c11fef3f01b6af }}
