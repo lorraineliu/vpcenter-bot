@@ -1,3 +1,6 @@
+import json
+import os.path
+
 from typing import List
 
 from botbuilder.dialogs import (
@@ -8,7 +11,9 @@ from botbuilder.dialogs import (
 )
 from botbuilder.dialogs.prompts import ChoicePrompt, PromptOptions
 from botbuilder.dialogs.choices import Choice, FoundChoice
-from botbuilder.core import MessageFactory
+from botbuilder.core import MessageFactory, CardFactory
+from botbuilder.schema import Attachment, ChannelAccount
+
 
 
 class InstructionDialog(ComponentDialog):
@@ -17,11 +22,11 @@ class InstructionDialog(ComponentDialog):
             dialog_id or InstructionDialog.__name__
         )
 
-        self.DONE_OPTION = '100'
+        self.DONE_OPTION = '[000]返回'
         self.sub_action_options = [
-            '101',
-            '102',
-            '103',
+            '[101]套餐1',
+            '[102]套餐2',
+            '[103]套餐3',
         ]
 
         self.add_dialog(ChoicePrompt(ChoicePrompt.__name__))
@@ -64,10 +69,16 @@ class InstructionDialog(ComponentDialog):
         done = selected == self.DONE_OPTION
         if done:
             return await step_context.end_dialog(selected)
-        if selected == "101":
-            await step_context.context.send_activity(MessageFactory.text(f"套餐1"))
-        elif selected == "102":
-            await step_context.context.send_activity(MessageFactory.text(f"套餐2"))
-        elif selected == "103":
-            await step_context.context.send_activity(MessageFactory.text(f"套餐3"))
+        if selected in self.sub_action_options:
+            card = self.create_adaptive_card_attachment(selected)
+            response = MessageFactory.attachment(card)
+            await step_context.context.send_activity(response)
         return await step_context.replace_dialog(InstructionDialog.__name__)
+
+    # Load attachment from file.
+    def create_adaptive_card_attachment(self, card_name):
+        relative_path = os.path.abspath(os.path.dirname(__file__))
+        path = os.path.join(relative_path, f"""../cards/1/{card_name}.json""")
+        with open(path) as in_file:
+            card = json.load(in_file)
+        return CardFactory.adaptive_card(card)

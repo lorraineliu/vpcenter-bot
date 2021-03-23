@@ -1,7 +1,5 @@
 # VPCenter Bot Service
 ## To-do
-- handle help/cancel interruption from user
-- the unified to-do item dialog logic
 - use card dialog
 - bugfix for welcome user page display 
 ## Done

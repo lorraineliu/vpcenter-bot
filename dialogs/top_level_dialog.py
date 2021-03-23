@@ -54,7 +54,7 @@ class CustomTopLevelDialog(ComponentDialog):
 
     async def end_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
         selected = step_context.result
-        if selected in ['100', '200', '300']:
+        if selected in ['[000]返回']:
             return await step_context.replace_dialog(CustomTopLevelDialog.__name__)
         # Exit the dialog.
         return await step_context.end_dialog()

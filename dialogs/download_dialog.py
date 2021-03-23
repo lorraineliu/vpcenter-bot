@@ -17,7 +17,7 @@ class DownloadDialog(ComponentDialog):
             dialog_id or DownloadDialog.__name__
         )
 
-        self.DONE_OPTION = '200'
+        self.DONE_OPTION = '[000]返回'
         self.sub_action_options = [
             '201',
             '202',
