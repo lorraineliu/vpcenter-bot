@@ -33,16 +33,7 @@ class DialogAndWelcomeBot(DialogBot):
             if member.id != turn_context.activity.recipient.id:
                 await turn_context.send_activity(
                     MessageFactory.text(
-                        f"""欢迎使用 Vpcenter Bot Service
-                        \n[1]套餐介绍
-                        \n[2]使用教程
-                        \n[3]软件下载
-                        \n[4]账号到期时间查询
-                        \n[5]在线充值（续费）
-                        \n[6]常见问题
-                        \n[7]用户协议
-                        \n[8]关于我们
-                        \n[9]人工服务
+                        f"""欢迎使用vpcenter-bot! 
                         """
                     )
                 )

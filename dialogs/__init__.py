@@ -3,15 +3,13 @@
 
 from .main_dialog import CustomMainDialog
 from .top_level_dialog import CustomTopLevelDialog
-from .instruction_dialog import InstructionDialog
-from .download_dialog import DownloadDialog
-from .account_expiration_dialog import AccountExpirationDialog
+from .card_dialog import CardDialog
+from .todo_dialog import TodoDialog
 
 
 __all__ = [
     "CustomMainDialog",
     "CustomTopLevelDialog",
-    "InstructionDialog",
-    "DownloadDialog",
-    "AccountExpirationDialog",
+    "CardDialog",
+    "TodoDialog"
 ]

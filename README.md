@@ -1,6 +1,5 @@
 # VPCenter Bot Service
 ## To-do
-- use card dialog
 - bugfix for welcome user page display 
 ## Done
 - Bot脚手架搭建
@@ -9,4 +8,5 @@
 - 返回上级菜单逻辑
 - 部署vpn-bot到azure
 - link skype channel
+- use card dialog
 
