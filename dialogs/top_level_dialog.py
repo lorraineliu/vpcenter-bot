@@ -11,6 +11,8 @@ from botbuilder.dialogs import (
 from botbuilder.dialogs.prompts import PromptOptions, TextPrompt, NumberPrompt
 
 from .card_dialog import *
+from .account_expiration_dialog import Dialog007
+from .todo_dialog import TodoDialog
 
 
 class CustomTopLevelDialog(ComponentDialog):
@@ -26,6 +28,7 @@ class CustomTopLevelDialog(ComponentDialog):
         self.add_dialog(Dialog007(Dialog007.__name__))
         self.add_dialog(Dialog008(Dialog008.__name__))
         self.add_dialog(Dialog009(Dialog009.__name__))
+        self.add_dialog(TodoDialog(TodoDialog.__name__))
 
 
         self.add_dialog(
@@ -60,17 +63,19 @@ class CustomTopLevelDialog(ComponentDialog):
             return await step_context.begin_dialog(Dialog005.__name__)
         elif user_action == 6:
             return await step_context.begin_dialog(Dialog006.__name__)
+        elif user_action == 7:
+            return await step_context.begin_dialog(Dialog007.__name__)
         elif user_action == 8:
             return await step_context.begin_dialog(Dialog008.__name__)
         elif user_action == 9:
             return await step_context.begin_dialog(Dialog009.__name__)
         #  待开发二级菜单
-        elif user_action in [7]:
-            return await step_context.begin_dialog(Dialog007.__name__)
+        elif user_action == 10:
+            return await step_context.begin_dialog(TodoDialog.__name__)
         return await step_context.next(user_action)
 
     async def loop_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
         selected = step_context.result
-        if selected == 0:
-            return await step_context.end_dialog()
+        # if selected == 0:
+        #     return await step_context.end_dialog()
         return await step_context.replace_dialog(CustomTopLevelDialog.__name__)

@@ -11,5 +11,5 @@ from botbuilder.dialogs.choices import Choice, FoundChoice
 from botbuilder.core import MessageFactory
 
 
-class AccountExpirationDialog(ComponentDialog):
+class Dialog007(ComponentDialog):
     pass

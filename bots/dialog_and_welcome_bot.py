@@ -33,7 +33,7 @@ class DialogAndWelcomeBot(DialogBot):
             if member.id != turn_context.activity.recipient.id:
                 await turn_context.send_activity(
                     MessageFactory.text(
-                        f"""欢迎使用vpcenter-bot! 
+                        f"""欢迎使用vpcenter-bot,请按任意键进入菜单! 
                         """
                     )
                 )
