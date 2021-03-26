@@ -7,7 +7,6 @@ from botbuilder.dialogs import (
     ComponentDialog,
 )
 from botbuilder.dialogs.prompts import ChoicePrompt, PromptOptions, NumberPrompt
-from botbuilder.dialogs.choices import Choice, FoundChoice
 from botbuilder.core import MessageFactory
 
 

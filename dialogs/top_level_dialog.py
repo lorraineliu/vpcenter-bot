@@ -75,7 +75,4 @@ class CustomTopLevelDialog(ComponentDialog):
         return await step_context.next(user_action)
 
     async def loop_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
-        selected = step_context.result
-        # if selected == 0:
-        #     return await step_context.end_dialog()
         return await step_context.replace_dialog(CustomTopLevelDialog.__name__)
