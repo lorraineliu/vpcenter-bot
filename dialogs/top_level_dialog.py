@@ -27,7 +27,6 @@ class CustomTopLevelDialog(ComponentDialog):
         self.add_dialog(Dialog006(Dialog006.__name__))
         self.add_dialog(Dialog007(Dialog007.__name__))
         self.add_dialog(Dialog008(Dialog008.__name__))
-        self.add_dialog(Dialog009(Dialog009.__name__))
         self.add_dialog(TodoDialog(TodoDialog.__name__))
 
 
@@ -67,10 +66,8 @@ class CustomTopLevelDialog(ComponentDialog):
             return await step_context.begin_dialog(Dialog007.__name__)
         elif user_action == 8:
             return await step_context.begin_dialog(Dialog008.__name__)
-        elif user_action == 9:
-            return await step_context.begin_dialog(Dialog009.__name__)
         #  待开发二级菜单
-        elif user_action == 10:
+        elif user_action in [9, 10]:
             return await step_context.begin_dialog(TodoDialog.__name__)
         return await step_context.next(user_action)
 

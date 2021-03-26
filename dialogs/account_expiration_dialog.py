@@ -9,7 +9,7 @@ from botbuilder.dialogs import (
 from botbuilder.dialogs.prompts import ChoicePrompt, PromptOptions,TextPrompt
 from botbuilder.core import MessageFactory
 
-from data_model.user import Daydayup
+from data_model import Daydayup
 
 
 class Dialog007(ComponentDialog):

@@ -82,7 +82,3 @@ class Dialog006(CardDialog):
 class Dialog008(CardDialog):
     def __init__(self, dialog_id: str = None):
         super(Dialog008, self).__init__(dialog_id or Dialog008.__name__, MENU_008)
-
-class Dialog009(CardDialog):
-    def __init__(self, dialog_id: str = None):
-        super(Dialog009, self).__init__(dialog_id or Dialog009.__name__, MENU_009)
