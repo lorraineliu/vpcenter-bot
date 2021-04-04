@@ -12,7 +12,7 @@
   "actions": [
     {
       "type": "Action.OpenUrl",
-      "title": "101",
+      "title": "504",
       "url": "https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0"
     }
   ]
