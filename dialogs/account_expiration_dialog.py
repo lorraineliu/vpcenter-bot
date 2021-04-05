@@ -54,5 +54,4 @@ class Dialog007(ComponentDialog):
             user = Daydayup.get(email=email)
             return user.expire_in
         except Exception as e:
-            if "DoesNotExist" in e.args[0]:
-                return None
+            return None
