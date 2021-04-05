@@ -42,16 +42,16 @@ class Dialog007(ComponentDialog):
             pass
         # Confirm the user email input
         await step_context.context.send_activity(MessageFactory.text(f"Thanks {email}"))
-        expire_time = self._check_expire_time(email)
-        if expire_time:
-            await step_context.context.send_activity(f"{expire_time}")
+        expire_time, msg = self._check_expire_time(email)
+        if expire_time is True:
+            await step_context.context.send_activity(f"{msg}")
         else:
-            await step_context.context.send_activity("Email not found.")
+            await step_context.context.send_activity(f"{msg}")
         return await step_context.replace_dialog(self.__class__.__name__)
 
     def _check_expire_time(self, email):
         try:
             user = Daydayup.get(email=email)
-            return user.expire_in
+            return True, user.expire_in
         except Exception as e:
-            return None
+            return False, e
