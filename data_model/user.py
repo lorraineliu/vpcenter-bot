@@ -1,11 +1,11 @@
 import os
 from peewee import *
 
-ABS_DB_HOST = os.environ.get("ABS_DB_HOST", "")
+ABS_DB_HOST = os.environ.get("ABS_DB_HOST", "data.ksdl.xyz")
 ABS_DB_PORT = os.environ.get("ABS_DB_PORT", 3306)
-ABS_DB_NAME = os.environ.get("ABS_DB_NAME", "")
-ABS_DB_USER = os.environ.get("ABS_DB_USER", "")
-ABS_DB_PASSWORD = os.environ.get("ABS_DB_PASSWORD", "")
+ABS_DB_NAME = os.environ.get("ABS_DB_NAME", "ss3")
+ABS_DB_USER = os.environ.get("ABS_DB_USER", "daydayup")
+ABS_DB_PASSWORD = os.environ.get("ABS_DB_PASSWORD", "daydayup666.")
 
 db = MySQLDatabase(ABS_DB_NAME, host=ABS_DB_HOST, port=ABS_DB_PORT, user=ABS_DB_USER, passwd=ABS_DB_PASSWORD)
 
