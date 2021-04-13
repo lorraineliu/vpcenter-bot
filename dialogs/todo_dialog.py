@@ -25,7 +25,7 @@ class TodoDialog(ComponentDialog):
         self.initial_dialog_id = WaterfallDialog.__name__
 
     async def promp_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
-        prompt_options = PromptOptions(prompt=MessageFactory.text(f"""开发中，敬请期待！请按0返回上一级菜单"""))
+        prompt_options = PromptOptions(prompt=MessageFactory.text(f"""开发中，敬请期待！请按0返回上一级菜单 http://www.baidu.com/"""))
         return await step_context.prompt(NumberPrompt.__name__, prompt_options)
 
     async def loop_step(self, step_context: WaterfallStepContext) -> DialogTurnResult:
